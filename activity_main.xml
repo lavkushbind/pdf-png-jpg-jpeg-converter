@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <!-- Header -->
+    <ImageView
+        android:id="@+id/appLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logo"
+        android:contentDescription="App Logo"/>
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Image Converter"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <!-- Image Selection Options -->
+    <Button
+        android:id="@+id/btnSelectImage"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/appTitle"
+        android:layout_marginTop="24dp"
+        android:text="Select an Image"
+        android:textColor="#FFFFFF"
+        android:elevation="4dp"
+        android:backgroundTint="#424343"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btnCaptureImage"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:backgroundTint="#424343"
+        android:layout_below="@id/btnSelectImage"
+        android:layout_marginTop="8dp"
+        android:text="Capture an Image"
+        android:textColor="#FFFFFF"
+        android:elevation="4dp"
+        android:textAllCaps="false" />
+
+    <!-- Output Format Radio Buttons -->
+
+    <!-- Convert Button -->
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnCaptureImage"
+        android:layout_marginTop="44dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioJpg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="JPG"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioJpeg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="JPEG"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radiopng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PNG"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/radioPdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PDF"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConvert"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/radioGroup"
+        android:layout_marginTop="24dp"
+        android:text="Convert"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:elevation="4dp"
+        android:enabled="false"
+        android:textAllCaps="false" />
+
+    <!-- Download Button -->
+    <Button
+        android:id="@+id/btnDownload"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/btnConvert"
+        android:layout_marginTop="16dp"
+        android:text="Download"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:elevation="4dp"
+        android:enabled="false"
+        android:textAllCaps="false" />
+
+
+    <ProgressBar
+        android:id="@+id/uploadProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnCaptureImage"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/uploadPercentageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_above="@+id/radioGroup"
+        android:layout_marginBottom="1dp"
+        android:text=""
+        android:textSize="18sp"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@+id/fileNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnDownload"
+        android:layout_marginTop="17dp"
+        android:text="image"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+
+</RelativeLayout>
+
